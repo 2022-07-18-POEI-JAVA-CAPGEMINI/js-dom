@@ -1,3 +1,6 @@
+import { users } from "../users.js";
+import { getParam } from "../utils/get-param.js";
+
 const id = parseInt(getParam("id"));
 
 const user = users.find((user) => user.id === id);
