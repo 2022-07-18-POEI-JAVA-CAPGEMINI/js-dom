@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Tableau</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Noms</th>
+          <th>Email</th>
+          <th>Voir</th>
+        </tr>
+      </thead>
+      <tbody id="users"></tbody>
+    </table>
+    <script>
+      const users = [
+        { noms: "Chris", email: "chris@gmail.com" },
+        { noms: "Jean", email: "j@gmail.com" },
+      ];
+
+      const $body = document.querySelector("#users");
+
+      for (let user of users) {
+        const $tr = document.createElement("tr");
+        const $nomsTd = document.createElement("td");
+        $nomsTd.innerText = user.noms;
+
+        const $emailTd = document.createElement("td");
+        $emailTd.innerText = user.email;
+
+        const $voirTd = document.createElement("td");
+        const $lien = document.createElement("a");
+        $lien.href = "/index.html";
+        $lien.innerText = "Voir";
+        $voirTd.appendChild($lien);
+
+        $tr.append($nomsTd, $emailTd, $voirTd);
+        $body.appendChild($tr);
+      }
+    </script>
+  </body>
+</html>
