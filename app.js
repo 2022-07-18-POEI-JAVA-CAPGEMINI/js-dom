@@ -33,15 +33,33 @@ const mainTitle = document.querySelector("h1");
 
 const titleGenerateButton = document.querySelector("button");
 
-titleGenerateButton.addEventListener("click", function () {
-  const randomIndexTitle = Math.floor(Math.random() * titles.length);
-  const randomIndexStyles = Math.floor(Math.random() * styles.length);
+titleGenerateButton.addEventListener("click", function (e) {
+  console.log(e);
+  const randomIndexTitle = generateRandomIndex(titles.length);
+  const randomIndexStyles = generateRandomIndex(styles.length);
   mainTitle.innerText = titles[randomIndexTitle];
 
-  for(let style of styles){
-     if(mainTitle.classList.contains(style)){
-        mainTitle.classList.remove(style)
-     }
+  for (let style of styles) {
+    if (mainTitle.classList.contains(style)) {
+      mainTitle.classList.remove(style);
+    }
   }
   mainTitle.classList.add(styles[randomIndexStyles]);
 });
+
+function generateRandomIndex(length) {
+  return Math.floor(Math.random() * length);
+}
+
+// let count = 0;
+// document.addEventListener("mousemove", function (event) {
+//     count++;
+//   console.log("x : ", event.clientX);
+//   console.log("y : ", event.clientY);
+//     console.log(count);
+// });
+
+// document.addEventListener("contextmenu", function (event) {
+//   event.preventDefault();
+//   console.log("Context menu open");
+// });
