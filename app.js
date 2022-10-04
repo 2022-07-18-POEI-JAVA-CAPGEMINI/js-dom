@@ -26,9 +26,15 @@ $addTodoButton.addEventListener("click", function () {
     return;
   }
   const $todo = document.createElement("li");
+
+  $todo.addEventListener("click", function () {
+    $todo.classList.toggle("completed");
+  });
   $todo.innerText = todos[currentIndex];
   $todoList.append($todo);
   currentIndex++;
 
-  //   Arrêter l'ajout des todos quand on arrive à la fin de la liste
+  //   1 : Vider la liste(UL) quand on clique sur le bouton "clear"
+  //   2 : Ajouter un bouton supprimer pour chaque todo.Quand on clique sur le bouton
+  //     supprimer, retirer le todo de la liste(UL).Quelques recherches sur internet
 });
