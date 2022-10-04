@@ -1,6 +1,4 @@
-const $users = document.querySelector("#users-list");
-
-users.forEach((user) => {
+export function Row(user) {
   const {
     id,
     name,
@@ -9,13 +7,13 @@ users.forEach((user) => {
     phone,
     company: { name: company },
   } = user;
-  $users.innerHTML += `<tr>
+  return `<tr>
         <td>${id}</td>
          <td>${name}</td>
           <td>${email}</td>
            <td>${city}</td>
             <td>${phone}</td>
              <td>${company}</td>
-             <td><a href="user-details.html?id=${id}">Voir</a></td>
+             <td><a href="/pages/user-details.html?id=${id}">Voir</a></td>
     </tr>`;
-});
+}
