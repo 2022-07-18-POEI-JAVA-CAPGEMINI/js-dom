@@ -1,0 +1,6 @@
+.clicked {
+  background-color: indigo;
+  color: indianred;
+  padding: 3px;
+  border: 1px solid indianred;
+}
