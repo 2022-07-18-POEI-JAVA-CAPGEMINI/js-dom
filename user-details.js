@@ -1,6 +1,4 @@
-const urlParams = new URLSearchParams(location.search);
-const id = parseInt(urlParams.get("id"));
-
+const id = parseInt(getParam("id"));
 
 const user = users.find((user) => user.id === id);
 
