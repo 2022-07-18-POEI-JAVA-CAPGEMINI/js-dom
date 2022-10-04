@@ -4,3 +4,27 @@
   padding: 3px;
   border: 1px solid indianred;
 }
+
+.style1,
+.style2,
+.style3 {
+  font-weight: bold;
+  width: 400px;
+}
+
+.style1 {
+  color: orange;
+  background-color: blueviolet;
+  border: 1px solid orange;
+}
+
+.style2 {
+  color: white;
+  background-color: brown;
+}
+
+.style3 {
+  color: green;
+  background-color: red;
+  border: 1px solid green;
+}

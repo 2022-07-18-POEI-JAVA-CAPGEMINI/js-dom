@@ -25,3 +25,23 @@ for (let tech of technos) {
 //     element.classList.add(className);
 //   }
 // }
+
+// Generate random heading
+const titles = ["Welcome", "Goodbye", "Good morning", "Blablabla"];
+const styles = ["style1", "style2", "style3"];
+const mainTitle = document.querySelector("h1");
+
+const titleGenerateButton = document.querySelector("button");
+
+titleGenerateButton.addEventListener("click", function () {
+  const randomIndexTitle = Math.floor(Math.random() * titles.length);
+  const randomIndexStyles = Math.floor(Math.random() * styles.length);
+  mainTitle.innerText = titles[randomIndexTitle];
+
+  for(let style of styles){
+     if(mainTitle.classList.contains(style)){
+        mainTitle.classList.remove(style)
+     }
+  }
+  mainTitle.classList.add(styles[randomIndexStyles]);
+});
