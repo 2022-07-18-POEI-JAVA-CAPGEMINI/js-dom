@@ -37,4 +37,6 @@ $addTodoButton.addEventListener("click", function () {
   //   1 : Vider la liste(UL) quand on clique sur le bouton "clear"
   //   2 : Ajouter un bouton supprimer pour chaque todo.Quand on clique sur le bouton
   //     supprimer, retirer le todo de la liste(UL).Quelques recherches sur internet
+  // 3 : Au départ, le bouton clear doit être inactif.Il ne devient actif que lorsqu'on 
+  //     affiche tous les elements du tableau "todos"
 });
