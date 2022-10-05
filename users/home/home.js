@@ -1,8 +1,9 @@
-import axios from "https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0/esm/axios.min.js";
+// import axios from "https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0/esm/axios.min.js";
+import { Api } from "../services/axios.js";
 
 const $usersList = document.querySelector("#users-list");
 
-axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
+Api.get("/").then((response) => {
   //   console.log(response.data);
   const users = response.data;
   for (let user of users) {
@@ -23,7 +24,7 @@ axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
     const $actionColumn = createColumn("");
 
     const $view = document.createElement("a");
-    $view.href = `details.html?id=${user.id}`;
+    $view.href = `/users/details/?id=${user.id}`;
     $view.innerText = "Voir";
     $view.classList.add("button", "is-primary");
     $actionColumn.appendChild($view);
