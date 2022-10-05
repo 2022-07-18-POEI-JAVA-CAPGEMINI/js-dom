@@ -1,5 +1,5 @@
 import { Api } from "../services/axios.js";
-import { getParam } from "../utils/get-params.js";
+import { getParam } from "../../utils/get-params.js";
 import { Card } from "./card/card.js";
 
 const main = document.querySelector("main");
