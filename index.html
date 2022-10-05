@@ -10,11 +10,11 @@
     <form>
       <div>
         <input type="text" placeholder="Nom complet" name="name" id="name" />
-        <p id="name_error"></p>
+        <p id="name_error" class="error"></p>
       </div>
       <div>
         <input type="text" placeholder="Email" name="email" id="email" />
-        <p id="email_error"></p>
+        <p id="email_error" class="error"></p>
       </div>
       <div>
         <input
@@ -23,12 +23,12 @@
           name="password"
           id="password"
         />
-        <p id="password_error"></p>
+        <p id="password_error" class="error"></p>
       </div>
       <input type="submit" value="Créer compte" />
     </form>
     <h2>Liste des users</h2>
-    <table>
+    <table border="1">
       <thead>
         <tr>
           <th>Nom</th>
