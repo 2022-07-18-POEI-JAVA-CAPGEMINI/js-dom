@@ -8,7 +8,12 @@
   <body>
     <h1>Créer votre compte</h1>
     <form>
-      <input type="text" placeholder="Nom complet" name="nom" id="nom" /><br />
+      <input
+        type="text"
+        placeholder="Nom complet"
+        name="name"
+        id="name"
+      /><br />
       <input type="text" placeholder="Email" name="email" id="email" /><br />
       <input
         type="password"
@@ -18,5 +23,17 @@
       /><br />
       <input type="submit" value="Créer compte" />
     </form>
+    <h2>Liste des users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+          <!-- <th>Actions</th> -->
+        </tr>
+      </thead>
+      <tbody id="users"></tbody>
+    </table>
+    <script src="app.js"></script>
   </body>
 </html>
