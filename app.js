@@ -14,6 +14,11 @@ const $users = document.querySelector("#users");
 // Le formulaire
 const $registerForm = document.querySelector("form");
 
+// Success
+const $successText = document.querySelector("#success-message");
+
+const fields = [$name, $email, $password];
+
 $registerForm.addEventListener("submit", function (e) {
   e.preventDefault();
   // console.log(`Nom : ${$name.value}`);
@@ -26,15 +31,55 @@ $registerForm.addEventListener("submit", function (e) {
     $nameError.innerText = "";
   }
 
-  const $userRow = document.createElement("tr");
-  const $nameColumn = document.createElement("td");
-  $nameColumn.innerText = $name.value;
+  if ($email.value.length === 0) {
+    $emailError.innerText = "L'email ne peut pas être vide";
+  } else {
+    $emailError.innerText = "";
+  }
 
-  const $emailColumn = document.createElement("td");
-  $emailColumn.innerText = $email.value;
+  if ($password.value.length < 8) {
+    $passwordError.innerText =
+      "Le mot de passe doit avoir au moin 8 caractères";
+  } else {
+    $passwordError.innerText = "";
+  }
 
-  $userRow.append($nameColumn, $emailColumn);
-  $users.appendChild($userRow);
+  const isFormValid = fields.every((field) => field.value.length > 0);
+
+  if (isFormValid && $password.value.length >= 8) {
+    const $userRow = document.createElement("tr");
+
+    const $nameColumn = document.createElement("td");
+    $nameColumn.innerText = $name.value;
+
+    const $emailColumn = document.createElement("td");
+    $emailColumn.innerText = $email.value;
+
+    const $actionColumn = document.createElement("td");
+    const $deleteButton = document.createElement("button");
+    $deleteButton.innerText = "Supprimer";
+    $deleteButton.addEventListener("click", function () {
+      // $userRow.remove();
+      this.parentElement.parentElement.remove();
+    });
+
+    $actionColumn.appendChild($deleteButton);
+    $userRow.append($nameColumn, $emailColumn, $actionColumn);
+    $users.appendChild($userRow);
+    $registerForm.reset();
+    $successText.classList.toggle("success");
+    $successText.innerHTML = `Enregistrement ajouté avec succès. <i class="close-success">x</i>`;
+    document.addEventListener("click", function (e) {
+      if (e.target.classList.contains("close-success")) {
+        e.target.parentElement.innerHTML = "";
+      }
+    });
+    setTimeout(() => {
+      $successText.innerText = "";
+      $successText.classList.toggle("success");
+    }, 5000);
+    return;
+  }
 
   // 1. Ne pas ajouter d'enregistrements dans le tableaux tant que tous les champs ne sont pas remplis
   // 2. Terminer la validation du formulaire(email, mot de passe)

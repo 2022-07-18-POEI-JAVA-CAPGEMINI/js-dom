@@ -1,3 +1,20 @@
 .error {
   color: red;
 }
+
+.success {
+  font-weight: bold;
+  font-size: 20px;
+  color: whitesmoke;
+  background-color: rgb(77, 198, 77);
+  width: 400px;
+  padding: 20px;
+}
+
+.close-success {
+  margin-left: 20px;
+  background-color: red;
+  color: wheat;
+  cursor: pointer;
+  padding: 10px;
+}
