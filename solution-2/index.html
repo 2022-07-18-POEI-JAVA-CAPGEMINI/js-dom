@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todos list</title>
+  </head>
+  <body>
+    <h1>Créer votre compte</h1>
+    <p id="success-message"></p>
+    <form>
+      <div>
+        <input type="text" placeholder="Nom complet" name="name" id="name" />
+        <p id="name_error" class="error"></p>
+      </div>
+      <div>
+        <input type="text" placeholder="Email" name="email" id="email" />
+        <p id="email_error" class="error"></p>
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="Mot de passe"
+          name="password"
+          id="password"
+        />
+        <p id="password_error" class="error"></p>
+      </div>
+      <input type="submit" value="Créer compte" />
+    </form>
+    <h2>Liste des users</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="users"></tbody>
+    </table>
+    <script src="app.js"></script>
+  </body>
+</html>
