@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="title is-3">Liste des utilisateurs</h1>
+      <table class="table is-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Names</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Company name</th>
+            <th>Ations</th>
+          </tr>
+        </thead>
+        <tbody id="users-list">
+          <tr>
+            <td>#1</td>
+            <td>Christian</td>
+            <td>christian.lisangola@gmail.com</td>
+            <td>Paris</td>
+            <td>+336666666</td>
+            <td>Coderbase IT</td>
+            <td>
+              <a class="button is-info"
+                ><i class="fa-regular fa-eye"></i>Voir</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0/axios.min.js"
+      integrity="sha512-26uCxGyoPL1nESYXHQ+KUmm3Maml7MEQNWU8hIt1hJaZa5KQAQ5ehBqK6eydcCOh6YAuZjV3augxu/5tY4fsgQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
