@@ -18,13 +18,22 @@ axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
 
     const $companyNameColumn = createColumn(user.company.name);
 
+    const $actionColumn = createColumn("");
+
+    const $view = document.createElement("a");
+    $view.href = `details.html?id=${user.id}`;
+    $view.innerText = "Voir";
+    $view.classList.add("button", "is-primary");
+    $actionColumn.appendChild($view);
+
     $row.append(
       $idColumn,
       $nameColumn,
       $emailColumn,
       $cityColumn,
       $phoneColumn,
-      $companyNameColumn
+      $companyNameColumn,
+      $actionColumn
     );
 
     $usersList.appendChild($row);
