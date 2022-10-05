@@ -17,6 +17,17 @@ axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
     const $phoneColumn = createColumn(user.phone);
 
     const $companyNameColumn = createColumn(user.company.name);
+
+    $row.append(
+      $idColumn,
+      $nameColumn,
+      $emailColumn,
+      $cityColumn,
+      $phoneColumn,
+      $companyNameColumn
+    );
+
+    $usersList.appendChild($row);
   }
 });
 

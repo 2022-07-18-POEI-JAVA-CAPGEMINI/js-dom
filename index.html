@@ -8,7 +8,7 @@
   <body>
     <main>
       <h1 class="title is-3">Liste des utilisateurs</h1>
-      <table class="table is-bordered">
+      <table class="table is-bordered is-hoverable">
         <thead>
           <tr>
             <th>#</th>
@@ -17,24 +17,10 @@
             <th>City</th>
             <th>Phone</th>
             <th>Company name</th>
-            <th>Actions</th>
+            <!-- <th>Actions</th> -->
           </tr>
         </thead>
-        <tbody id="users-list">
-          <tr>
-            <td>#1</td>
-            <td>Christian</td>
-            <td>christian.lisangola@gmail.com</td>
-            <td>Paris</td>
-            <td>+336666666</td>
-            <td>Coderbase IT</td>
-            <td>
-              <a class="button is-info"
-                ><i class="fa-regular fa-eye"></i>Voir</a
-              >
-            </td>
-          </tr>
-        </tbody>
+        <tbody id="users-list"></tbody>
       </table>
     </main>
     <script
@@ -46,4 +32,3 @@
     <script src="app.js" type="module"></script>
   </body>
 </html>
-
