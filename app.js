@@ -1,3 +1,5 @@
+import axios from "https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0/esm/axios.min.js";
+
 const $usersList = document.querySelector("#users-list");
 
 axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
